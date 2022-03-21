@@ -1,11 +1,11 @@
 import BooksHeader from './BooksHeader';
 import BooksList from './BooksList';
 
-const BooksContainer = ({ booksData }) => {
+const BooksContainer = () => {
   return (
     <div>
       <BooksHeader />
-      <BooksList booksData={booksData} />
+      <BooksList />
     </div>
   );
 }

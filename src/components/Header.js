@@ -1,7 +1,9 @@
-const Header = ({ setSubject}) => {
-  const handleSubjectChange = (event) => {
-    setSubject(event.target.value);
-  };
+import { useContext } from 'react'
+
+import { BooksContext } from '../context/BooksContext';
+
+const Header = () => {
+  const { handleSubjectChange } = useContext(BooksContext);
 
   return (
     <div>

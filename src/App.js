@@ -1,10 +1,9 @@
-import { useEffect, useState, createContext } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 
+import { BooksContext } from './context/BooksContext';
 import Header from './components/Header';
 import BooksContainer from './components/BooksContainer';
-
-export const BooksContext = createContext();
 
 function App() {
   const [subject, setSubject] = useState('thriller');
@@ -17,13 +16,17 @@ function App() {
       });
   }, [subject]);
 
+  const handleSubjectChange = (event) => {
+    setSubject(event.target.value);
+  }
+
   return (
-    // <BooksContext.Provider booksData={{ booksData, setSubject}}>
+    <BooksContext.Provider value={{ booksData, handleSubjectChange }}>
       <div>
-        <Header setSubject={setSubject} />
-        <BooksContainer booksData={booksData} />
+        <Header />
+        <BooksContainer />
       </div>
-    // </BooksContext.Provider>
+    </BooksContext.Provider>
   );
 }
 

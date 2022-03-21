@@ -1,4 +1,10 @@
-const BooksList = ({ booksData }) => {
+import { useContext } from 'react';
+
+import { BooksContext  } from '../context/BooksContext';
+
+const BooksList = () => {
+  const { booksData } = useContext(BooksContext);
+
   return (
     <div>
       <ul>
