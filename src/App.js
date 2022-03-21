@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
-import { BooksContext } from './context/BooksContext';
+import { BooksProvider } from './context/BooksContext';
 import Header from './components/Header';
 import BooksContainer from './components/BooksContainer';
 
@@ -24,12 +24,12 @@ function App() {
   }
 
   return (
-    <BooksContext.Provider value={{ booksData, handleSubjectChange }}>
+    <BooksProvider value={{ booksData, handleSubjectChange }}>
       <div>
         <Header />
         <BooksContainer />
       </div>
-    </BooksContext.Provider>
+    </BooksProvider>
   );
 }
 
