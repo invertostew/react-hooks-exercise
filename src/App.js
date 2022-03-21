@@ -13,6 +13,9 @@ function App() {
     axios.get(`http://openlibrary.org/subjects/${subject}.json?limit=5`)
       .then((res) => {
         setBooksData(res.data);
+      })
+      .catch((err) => {
+        alert('There has been an error.');
       });
   }, [subject]);
 
